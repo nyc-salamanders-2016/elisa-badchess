@@ -1,10 +1,15 @@
 ul {
 list-style: none;
   margin:0;
-  padding:0
+  padding:0;
+  width: 40%;
 }
 
 li {
-  padding: 5px;
-  background:#eee
+  padding: 20px;
+  padding-left: 100px;
+  background: #f52e80;
+  margin-left: 25%;
+  font-size: 20px;
+  font-family: arial;
 }
