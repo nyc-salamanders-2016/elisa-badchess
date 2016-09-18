@@ -11,8 +11,8 @@ class List extends React.Component {
     this.dragged = e.currentTarget;
     // defines what is being dragged
     e.dataTransfer.effectAllowed = 'move';
-    // specifies the effect that is allowed for a drag operation
-    e.dataTransfer.setData('text/html', e.currentTarget);
+    // specifies the effect that is allowed for a drag operation, other effects: none, copy, copyLink, copyMove, link, linkMove, all
+    e.dataTransfer.setData('text/html', e.currentTarget.id);
     // sets the drag operation's drag data to the specified data and type (format, type)
   }
 
@@ -22,7 +22,7 @@ class List extends React.Component {
     this.dragged.style.display = "none";
   }
 
-  // choose how things are displayed after drag has completed
+  // sets style after drag is complete
   dragOver(e){
     e.preventDefault();
     this.dragged.style.display = "none";
@@ -36,6 +36,7 @@ class List extends React.Component {
          return (<li id="target" key={index} data-id={index} draggable="true" onDragEnd={this.dragEnd} onDragStart={this.dragStart}>{item}</li>)
        })
        // to make an element draggable, set draggable attribute to true
+       //ondragend and ondrag start are event handlers
      }
       </ul>
     )
